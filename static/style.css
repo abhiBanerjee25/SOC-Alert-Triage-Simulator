@@ -1,0 +1,33 @@
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+}
+
+.HIGH {
+    border-left: 6px solid red;
+}
+
+.MEDIUM {
+    border-left: 6px solid orange;
+}
+
+.CRITICAL {
+    border-left: 6px solid purple;
+}

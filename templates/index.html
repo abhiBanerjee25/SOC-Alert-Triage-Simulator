@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="5">
+    <title>SOC Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>🛡️ SOC Alert Dashboard</h1>
+
+    <div class="container">
+
+        {% for incident in incidents %}
+        <div class="card {{ incident.severity }}">
+            <h2>{{ incident.type }}</h2>
+            <p><b>Target:</b> {{ incident.target }}</p>
+            <p><b>Severity:</b> {{ incident.severity }}</p>
+            <p><b>Action:</b> {{ incident.action }}</p>
+            <p><b>Evidence:</b> {{ incident.evidence }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</body>
+</html>
