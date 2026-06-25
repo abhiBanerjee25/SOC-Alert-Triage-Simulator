@@ -58,7 +58,7 @@ A lightweight **Security Operations Center (SOC) simulation platform** built usi
 ## 📸 Screenshots
 
 ### Dashboard View
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](Screenshots/dashboard.png)
 
 ### Incident View
 ![Incidents](Screenshots/project-structure.png)
@@ -70,6 +70,15 @@ A lightweight **Security Operations Center (SOC) simulation platform** built usi
 ```bash
 pip install flask
 python app.py
+
+---
+
+# 💾 STEP 3: Save file
+
+Press:
+
+```text
+CTRL + S
 
 ## 🔮 Future Improvements
 Real-time log streaming
