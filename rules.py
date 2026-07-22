@@ -1,6 +1,7 @@
 BRUTE_FORCE_THRESHOLD = 3
 PORT_SCAN_THRESHOLD = 2
 
+
 def detect_incident(event_counts):
     incidents = []
 
@@ -11,7 +12,8 @@ def detect_incident(event_counts):
                 "type": "Brute Force Attack",
                 "target": target,
                 "severity": "HIGH",
-                "action": "Block IP + Escalate SOC Tier 2"
+                "action": "Block IP + Escalate SOC Tier 2",
+                "evidence": f"{count} failed login attempts detected"
             })
 
         elif event_type == "PORT_SCAN" and count >= PORT_SCAN_THRESHOLD:
@@ -19,7 +21,8 @@ def detect_incident(event_counts):
                 "type": "Port Scanning Activity",
                 "target": target,
                 "severity": "MEDIUM",
-                "action": "Monitor + Firewall Rule Update"
+                "action": "Monitor + Firewall Rule Update",
+                "evidence": f"{count} port scan events detected"
             })
 
         elif event_type == "MALWARE_DETECTED":
@@ -27,13 +30,8 @@ def detect_incident(event_counts):
                 "type": "Malware Detection",
                 "target": target,
                 "severity": "CRITICAL",
-                "action": "Isolate Machine Immediately"
+                "action": "Isolate Machine Immediately",
+                "evidence": f"{count} malware detection events recorded"
             })
-        incidents.append({
-    "type": "Brute Force Attack",
-    "target": target,
-    "severity": "HIGH",
-    "action": "Block IP + Escalate SOC Tier 2",
-    "evidence": f"{count} failed logins detected"
-})
+
     return incidents
